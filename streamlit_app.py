@@ -1,9 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-
-st.title('Welcome to the Machine learning Model of Prosper Loan Data')
-st.subheader('Developed by Aashutosh Sinha')
 import streamlit as st
 import numpy as np
 from pandas import DataFrame
@@ -15,6 +12,9 @@ import seaborn as sns
 from functionforDownloadButtons import download_button
 import os
 import json
+
+st.title('Welcome to the Machine learning Model of Prosper Loan Data')
+st.subheader('Developed by Aashutosh Sinha')
 
 st.set_page_config(
     page_title="BERT Keyword Extractor",
