@@ -2,12 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from pandas import DataFrame
-import scipy.stats
-from scipy.stats import norm
-import altair as alt
-
 st.set_page_config(
-    page_title="A/B Testing App", page_icon="📊", initial_sidebar_state="expanded"
+    page_title="ProsperLoan Data Testing App", page_icon="📊", initial_sidebar_state="expanded"
 )
 
 
