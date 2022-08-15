@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import seaborn as sns
 import pandas as pd
 from pandas import DataFrame
 st.set_page_config(
@@ -286,12 +287,10 @@ if use_example_file:
 
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
-    st.subheader('Number of pickups by hour')
-    hist_values = np.histogram(df, bins=24, range=(0,24))[0]
-    st.bar_chart(hist_values)
-
     st.markdown("### Data preview")
     st.dataframe(df.head())
+    st.dataframe(sns.set_style("whitegrid", {"grid.color": ".6", "grid.linestyle": ":"}))
+    st.dataframe(sns.countplot(y='EmploymentStatus',data=df))
 
     st.markdown("### Select columns for analysis")
     with st.form(key="my_form"):
