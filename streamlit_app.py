@@ -287,8 +287,8 @@ if use_example_file:
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.subheader('Number of pickups by hour')
-hist_values = np.histogram(df, bins=24, range=(0,24))[0]
-st.bar_chart(hist_values)
+    hist_values = np.histogram(df, bins=24, range=(0,24))[0]
+    st.bar_chart(hist_values)
 
     st.markdown("### Data preview")
     st.dataframe(df.head())
