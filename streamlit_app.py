@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-import seaborn as sns
 import pandas as pd
 from pandas import DataFrame
 st.set_page_config(
@@ -289,8 +288,7 @@ if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.markdown("### Data preview")
     st.dataframe(df.head())
-    st.dataframe(sns.set_style("whitegrid", {"grid.color": ".6", "grid.linestyle": ":"}))
-    st.dataframe(sns.countplot(y='EmploymentStatus',data=df))
+    st.dataframe(df.info())
 
     st.markdown("### Select columns for analysis")
     with st.form(key="my_form"):
