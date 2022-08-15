@@ -261,7 +261,7 @@ st.write(
     """
 # Prosper Loan Data App
 Upload your experiment results to see the significance of your Prosper Loan Data.
-### Developed By Aashutosh Kumar Singh
+###### Developed By Aashutosh Kumar Singh
 """
 
 )
