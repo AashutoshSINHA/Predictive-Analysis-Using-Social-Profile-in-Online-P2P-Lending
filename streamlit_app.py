@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from pandas import DataFrame
 st.set_page_config(
-    page_title="ProsperLoan Data Testing App", page_icon="📊", initial_sidebar_state="expanded"
+    page_title="ProsperLoan Data Testing App", page_icon="📈🤨", initial_sidebar_state="expanded"
 )
 
 
@@ -261,16 +261,12 @@ def calculate_significance(
 
 st.write(
     """
-# 📊 A/B Testing App
-Upload your experiment results to see the significance of your A/B test.
+# Prosper Loan Data App
+Upload your experiment results to see the significance of your Prosper Loan Data.
 """
 )
 
 uploaded_file = st.file_uploader("Upload CSV", type=".csv")
-
-use_example_file = st.checkbox(
-    "Use example file", False, help="Use in-built example file to demo the app"
-)
 
 ab_default = None
 result_default = None
