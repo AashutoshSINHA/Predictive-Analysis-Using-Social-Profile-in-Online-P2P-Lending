@@ -264,6 +264,7 @@ st.write(
 # Prosper Loan Data App
 Upload your experiment results to see the significance of your Prosper Loan Data.
 """
+
 )
 
 uploaded_file = st.file_uploader("Upload CSV", type=".csv")
@@ -285,6 +286,9 @@ if use_example_file:
 
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
+    st.subheader('Number of pickups by hour')
+hist_values = np.histogram(df, bins=24, range=(0,24))[0]
+st.bar_chart(hist_values)
 
     st.markdown("### Data preview")
     st.dataframe(df.head())
@@ -292,9 +296,9 @@ if uploaded_file:
     st.markdown("### Select columns for analysis")
     with st.form(key="my_form"):
         ab = st.multiselect(
-            "A/B column",
+            "Prosper Data Columns",
             options=df.columns,
-            help="Select which column refers to your A/B testing labels.",
+            help="Select which column refers to your Prosper Data loan testing labels.",
             default=ab_default,
         )
         if ab:
