@@ -261,8 +261,9 @@ def calculate_significance(
 
 st.write(
     """
-# Prosper Loan Data App
+#📈🤨 Prosper Loan Data App
 Upload your experiment results to see the significance of your Prosper Loan Data.
+### Developed By Aashutosh Kumar Singh
 """
 
 )
