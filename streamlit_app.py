@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from pandas import DataFrame
 st.set_page_config(
-    page_title="ProsperLoan Data Testing App", page_icon="📈🤨", initial_sidebar_state="expanded"
+    page_title="ProsperLoan Data Testing App", page_icon="📊", initial_sidebar_state="expanded"
 )
 
 
@@ -215,7 +215,6 @@ def style_p_value(v, props=""):
     """
     return np.where(v < st.session_state.alpha, "color:green;", props)
 
-
 def calculate_significance(
     conversions_a, conversions_b, visitors_a, visitors_b, hypothesis, alpha
 ):
@@ -258,12 +257,11 @@ def calculate_significance(
         st.session_state.alpha, st.session_state.p
     )
 
-
 st.write(
     """
-#📈🤨 Prosper Loan Data App
+#Prosper Loan Data App
 Upload your experiment results to see the significance of your Prosper Loan Data.
-### Developed By Aashutosh Kumar Singh
+###Developed By Aashutosh Kumar Singh
 """
 
 )
