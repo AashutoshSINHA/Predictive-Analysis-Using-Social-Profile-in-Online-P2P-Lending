@@ -2,21 +2,12 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from pandas import DataFrame
-# For Flair (Keybert)
-import seaborn as sns
-# For download buttons
-import os
-import json
-
 st.title('Welcome to the Machine learning Model of Prosper Loan Data')
 st.subheader('Developed by Aashutosh Sinha')
-
 st.set_page_config(
     page_title="BERT Keyword Extractor",
     page_icon="🎈",
 )
-
-
 def _max_width_():
     max_width_str = f"max-width: 1400px;"
     st.markdown(
