@@ -2,6 +2,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from pandas import DataFrame
+# 
+with st.sidebar:
+    add_radio = st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+    
 st.set_page_config(
     page_title="ProsperLoan Data Testing App", page_icon="📊", initial_sidebar_state="expanded"
 )
