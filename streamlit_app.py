@@ -2,15 +2,9 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from pandas import DataFrame
-# 
-with st.sidebar:
-    add_radio = st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
-    
 st.set_page_config(
     page_title="ProsperLoan Data Testing App", page_icon="📊", initial_sidebar_state="expanded"
 )
-
-
 def conversion_rate(conversions, visitors):
     """Returns the conversion rate for a given number of conversions and number of visitors.
     Parameters
@@ -25,8 +19,6 @@ def conversion_rate(conversions, visitors):
         The conversion rate
     """
     return (conversions / visitors) * 100
-
-
 def lift(cra, crb):
     """Returns the relative uplift in conversion rate.
     Parameters
