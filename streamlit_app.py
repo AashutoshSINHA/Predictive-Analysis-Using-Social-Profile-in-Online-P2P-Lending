@@ -3,10 +3,8 @@ import numpy as np
 import pandas as pd
 from pandas import DataFrame
 # For Flair (Keybert)
-from flair.embeddings import TransformerDocumentEmbeddings
 import seaborn as sns
 # For download buttons
-from functionforDownloadButtons import download_button
 import os
 import json
 
