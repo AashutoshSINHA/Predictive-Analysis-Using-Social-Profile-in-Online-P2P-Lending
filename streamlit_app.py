@@ -2,6 +2,9 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from pandas import DataFrame
+import scipy.stats
+from scipy.stats import norm
+import altair as alt
 st.set_page_config(
     page_title="ProsperLoan Data Testing App", page_icon="📊", initial_sidebar_state="expanded"
 )
@@ -261,10 +264,6 @@ Upload your experiment results to see the significance of your Prosper Loan Data
 """
 
 )
-from PIL import Image
-image = Image.open('https://unsplash.com/photos/JKUTrJ4vK00?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink')
-
-st.image(image, caption='prosper Loan Data Histogram....')
 
 uploaded_file = st.file_uploader("Upload CSV", type=".csv")
 
@@ -287,7 +286,6 @@ if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.markdown("### Data preview")
     st.dataframe(df.head())
-    st.dataframe(df.info())
 
     st.markdown("### Select columns for analysis")
     with st.form(key="my_form"):
