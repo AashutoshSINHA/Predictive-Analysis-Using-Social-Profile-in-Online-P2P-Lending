@@ -210,48 +210,66 @@ def style_p_value(v, props=""):
     >>> df.style.apply(style_p_value, props="color:red;", axis=1, subset=["p-value"])
     """
     return np.where(v < st.session_state.alpha, "color:green;", props)
+def main():
+    with st.form('prediction_form'):
 
-def calculate_significance(
-    conversions_a, conversions_b, visitors_a, visitors_b, hypothesis, alpha
-):
-    """Calculates all metrics to be displayed including conversion rates,
-    uplift, standard errors, z-score, p-value, significance, and stores them
-    as session state variables.
-    Parameters
-    ----------
-    conversions_a: int
-        Number of users who converted when shown variant/Group A
-    conversions_b: int
-        Number of users who converted when shown variant/Group B
-    visitors_a: int
-        Total number of users shown variant/Group A
-    visitors_b: int
-       Total number of users shown variant/Group B
-    hypothesis: str
-        Type of hypothesis test: "One-sided" or "Two-sided"
-        "One-sided" is a statistical hypothesis test set up to
-        show that the sample mean would be higher or lower than the
-        population mean, but not both.
-        "Two-sided" is a statistical hypothesis test in which the
-        critical area of a distribution is two-sided and tests whether
-        a sample is greater or less than a range of values.
-    alpha: float
-        The sigificance level (α) is the probability of a type I error --
-        the probability of rejecting the null hypothesis when it is true
-    """
-    st.session_state.cra = conversion_rate(int(conversions_a), int(visitors_a))
-    st.session_state.crb = conversion_rate(int(conversions_b), int(visitors_b))
-    st.session_state.uplift = lift(st.session_state.cra, st.session_state.crb)
-    st.session_state.sea = std_err(st.session_state.cra, float(visitors_a))
-    st.session_state.seb = std_err(st.session_state.crb, float(visitors_b))
-    st.session_state.sed = std_err_diff(st.session_state.sea, st.session_state.seb)
-    st.session_state.z = z_score(
-        st.session_state.cra, st.session_state.crb, st.session_state.sed
-    )
-    st.session_state.p = p_value(st.session_state.z, st.session_state.hypothesis)
-    st.session_state.significant = significance(
-        st.session_state.alpha, st.session_state.p
-    )
+        st.header("Predict the input for following features:") 
+                
+        
+        ListingNumber = st.selectbox( 'ListingNumber:', [1,4,6])
+        
+        ClosedDate = st.selectbox( 'ClosedDate:', [1,78,81,92,100,105])
+        BorrowerAPR = st.selectbox('BorrowerAPR:', [1,747,902,1260,1644,3672])
+        BorrowerRate = st.selectbox( 'BorrowerRate:', [1,1319,1508,1651,1905,3672])
+        DateCreditPulled = st.selectbox('DateCreditPulled:', [1,4,6])
+        LoanMonthsSinceOrigination = st.selectbox('LoanMonthsSinceOrigination:', [8,9,13,20,4336,4485,4899,5215,5865])
+        LoanNumber = st.selectbox('LoanNumber:', [1,4,6])
+        LoanOriginationQuarter = st.selectbox('LoanOriginationQuarter:', [13,585,1243,1270,1600,2403,3074,3913,4424,5061,14450])
+        LP_CustomerPayments = st.selectbox('LP_CustomerPayments:', [1,82,83,119,6208])
+        LP_CustomerPrincipalPayments = st.selectbox('LP_CustomerPrincipalPayments:', [1,1938,2042,2274,2595,6308])
+        
+        submit = st.form_submit_button("Predict")
+# def calculate_significance(
+#     conversions_a, conversions_b, visitors_a, visitors_b, hypothesis, alpha
+# ):
+#     """Calculates all metrics to be displayed including conversion rates,
+#     uplift, standard errors, z-score, p-value, significance, and stores them
+#     as session state variables.
+#     Parameters
+#     ----------
+#     conversions_a: int
+#         Number of users who converted when shown variant/Group A
+#     conversions_b: int
+#         Number of users who converted when shown variant/Group B
+#     visitors_a: int
+#         Total number of users shown variant/Group A
+#     visitors_b: int
+#        Total number of users shown variant/Group B
+#     hypothesis: str
+#         Type of hypothesis test: "One-sided" or "Two-sided"
+#         "One-sided" is a statistical hypothesis test set up to
+#         show that the sample mean would be higher or lower than the
+#         population mean, but not both.
+#         "Two-sided" is a statistical hypothesis test in which the
+#         critical area of a distribution is two-sided and tests whether
+#         a sample is greater or less than a range of values.
+#     alpha: float
+#         The sigificance level (α) is the probability of a type I error --
+#         the probability of rejecting the null hypothesis when it is true
+#     """
+#     st.session_state.cra = conversion_rate(int(conversions_a), int(visitors_a))
+#     st.session_state.crb = conversion_rate(int(conversions_b), int(visitors_b))
+#     st.session_state.uplift = lift(st.session_state.cra, st.session_state.crb)
+#     st.session_state.sea = std_err(st.session_state.cra, float(visitors_a))
+#     st.session_state.seb = std_err(st.session_state.crb, float(visitors_b))
+#     st.session_state.sed = std_err_diff(st.session_state.sea, st.session_state.seb)
+#     st.session_state.z = z_score(
+#         st.session_state.cra, st.session_state.crb, st.session_state.sed
+#     )
+#     st.session_state.p = p_value(st.session_state.z, st.session_state.hypothesis)
+#     st.session_state.significant = significance(
+#         st.session_state.alpha, st.session_state.p
+#     )
 
 st.write(
     """
@@ -422,5 +440,6 @@ if uploaded_file:
         .apply(style_p_value, props="color:red;", axis=1, subset=["p-value"])
     )
 
-
-
+                
+        
+        
