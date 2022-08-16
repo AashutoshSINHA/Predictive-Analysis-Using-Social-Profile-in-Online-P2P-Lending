@@ -1,8 +1,5 @@
 import streamlit as st
-import cv2
-import numpy as np
 import pickle
-import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.naive_bayes import GaussianNB
