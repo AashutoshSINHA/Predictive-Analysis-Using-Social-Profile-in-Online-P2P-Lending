@@ -378,6 +378,7 @@ It is compatible with major Python libraries such as scikit-learn, Keras, PyTorc
 
 
 **Overview of Web Application:**
-![image](https://user-images.githubusercontent.com/88158022/185347659-b8f1e07a-e3b6-496b-9bc6-86bf3c20d0f8.png)
+![image](https://user-images.githubusercontent.com/88158022/185682791-6879418f-ff25-48ec-b277-8a17753d92c7.png)
+
 
 [Visit The Web App:](https://suwarna93-predictive-analysis-using-social-profile-app-1-nbvf0o.streamlitapp.com/)
