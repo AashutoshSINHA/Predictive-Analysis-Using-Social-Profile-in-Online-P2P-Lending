@@ -367,7 +367,7 @@ Streamlit is an open source app framework in Python language.
 It helps us create web apps for data science and machine learning in a short time.
 It is compatible with major Python libraries such as scikit-learn, Keras, PyTorch, SymPy(latex), NumPy, pandas, Matplotlib etc. 
 
-**You can access our app by follosing this link [Team-A-predictive-analysis-using-social-profile-streamlitapp.com](https://suwarna93-predictive-analysis-using-social-profile-i-app-f907cz.streamlitapp.com/)**
+**You can access our app by follosing this link [Team-A-predictive-analysis-using-social-profile-streamlitapp.com](https://suwarna93-predictive-analysis-using-social-profile-app-1-nbvf0o.streamlitapp.com/)**
 -	It is a tool that lets you creating applications for your machine learning model by using simple python code. 
 -	We write a python code for our app using Streamlit.
 -	The output of our app will be Accepted or Rejected. 
