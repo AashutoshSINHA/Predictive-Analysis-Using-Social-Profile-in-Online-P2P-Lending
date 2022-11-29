@@ -187,9 +187,7 @@ folium.Marker(
 
 # call to render Folium map in Streamlit
 st_data = st_folium(m, width = 725)
-
-    # Color negative values red; color significant p-value green and not significant red
-    table2 = ncol1.write(
+table2 = ncol1.write(
         metrics.style.format(
             formatter={("p-value", "z-score"): "{:.3g}", ("uplift"): "{:.3g}%"}
         )
