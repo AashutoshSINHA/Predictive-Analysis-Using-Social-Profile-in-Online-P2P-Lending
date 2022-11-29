@@ -186,14 +186,14 @@ folium.Marker(
 ).add_to(m)
 
 # call to render Folium map in Streamlit
-st_data = st_folium(m, width = 725)
-table2 = ncol1.write(
-        metrics.style.format(
-            formatter={("p-value", "z-score"): "{:.3g}", ("uplift"): "{:.3g}%"}
-        )
-        .applymap(style_negative, props="color:red;")
-        .apply(style_p_value, props="color:red;", axis=1, subset=["p-value"])
-    )
+# st_data = st_folium(m, width = 725)
+# table2 = ncol1.write(
+#         metrics.style.format(
+#             formatter={("p-value", "z-score"): "{:.3g}", ("uplift"): "{:.3g}%"}
+#         )
+#         .applymap(style_negative, props="color:red;")
+#         .apply(style_p_value, props="color:red;", axis=1, subset=["p-value"])
+#     )
 
                 
         
